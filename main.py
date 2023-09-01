@@ -42,6 +42,17 @@ def main(prefixes, output):
 
     t.close()
 
+    total = stats['ok'] + stats['error']
+    if not total:
+        total = 1
+
+    okperc = int(100 * stats['ok'] / total)
+    errperc = int(100 * stats['error'] / total)
+
+    print("Overall stats: ")
+    print(f"    ok records     : {stats['ok']} ({okperc} %)")
+    print(f"    failed records : {stats['error']} ({errperc} %)")
+
 
 def check_prefix(writer, csvfile, stats, prefix, t):
     page_url = f"https://api.datacite.org/dois?prefix={prefix}&page[size]=50"

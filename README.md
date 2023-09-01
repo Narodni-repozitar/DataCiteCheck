@@ -16,7 +16,9 @@ or
 
 Feel free to pass multiple prefixes.
 
-When running, the tool shows progress and estimated time:
+The tool shows progress and estimated time.
+When all checks have finished, it will print
+overall statistics:
 
 ![progress](./docs/progress.png)
 
