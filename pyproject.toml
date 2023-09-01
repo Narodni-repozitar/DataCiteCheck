@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]  # list of folders that contain the packages (["."] by default)
+exclude = ["instance"]
+namespaces = false
+
+
+[project]
+name = "DataciteCheck"
+version = "1.0.0"
+authors = [
+    {name = "Mirek Simek", email = "miroslav.simek@cesnet.cz"},
+]
+description = "Datacite records check tool"
+readme = {file = "README.md", content-type = 'text/markdown'}
+requires-python = ">=3.9,<3.11"
+license = {text = "MIT"}
+
+dependencies = [
+    "requests",
+    "click",
+    "tqdm"
+]
